@@ -1,6 +1,6 @@
 import os,shutil 
 
-print('输入格式：E:\myprojectnew\jupyter\整理文件夹\示例')
+print('输入格式：E:\\myprojectnew\\jupyter\\整理文件夹\\示例')
 path = input('请键入需要整理的文件夹地址：')
 new_path = input('请键入要复制到的文件夹地址：')
 

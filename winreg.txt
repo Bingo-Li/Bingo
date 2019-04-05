@@ -1,0 +1,17 @@
+winreg -- Windows registry access
+Reference page ：https://docs.python.org/zh-cn/3/library/winreg.html
+Functions
+    winreg.CloseKey(hkey)
+    winreg.ConnectRegistry(computer_name,key)
+    winreg.CreateKey(key,sub_key)
+    winreg.CreateKeyEx(key,sub_key,reserved =0, access = KEY_WRITE)
+    winreg.DeleteKey(key,sub_key)
+    winreg.DeletekeyEx(key,sub_key,access=KEY_WOW64,reserved=0)
+    winreg.DeleteValue(key,value)
+    winreg.EnumKey(key,Index)
+    winreg.EnumValue(key,Index)
+    winreg.ExpandEnvironmentStrings(str)
+    winreg.FlushKey(key)
+    winreg.LoadKey(key,sub_key,file_name)
+    winreg.OpenKey(key,sub_key,reserved=0,access=KEY_READ)
+    winreg.OpenKeyEx(key,sub_key,reserved=0,access=KEY_READ)

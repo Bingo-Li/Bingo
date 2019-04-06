@@ -3,6 +3,164 @@
 远程仓库： git remote add --> git pull --> git push --> git clone
 分支管理: git branch --> git checkout --> git merge 
 标签管理: git tag --> git push
+
 reference: http://www.runoob.com/git/git-create-repository.html
+https://git-scm.com/book/zh
+http://git-school.github.io/visualizing-git/#free
+
+--global:如果使用了 --global 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 --global 选项的命令来配置。
+1.配置用户名和邮箱
+git config [--global] user.name <"str">
+git config [--global] user.email <str>
+
+2.配置文本编辑器
+git config [--global] core.editor vim
+3.检查配置信息
+git config --list
+git congig <key>  Example : git config user.name
+4.初始化仓库
+git init
+5.提交跟踪文件
+git add <file>  --> git commit -m <"commit log">
+6.克隆现有仓库
+SSH 协议 ： git clone user@server:path/to/repo.git
+git 协议 ： git clone git://...
+http协议 ： git clone https:///...
+7.检查当前文件状态
+git status [-s]/[--short]
+8.查看更新部分
+git diff [--cached]/[--staged] //查看已暂存未提交内容
+9.移除文件
+git rm <file>
+10.移动文件
+git mv file_from file_to
+
+11.查看提交历史(git log [...])
+-p：按补丁格式显示每个更新之间的差异
+--stat:显示每次更新的文件修改统计信息
+--pretty = oneline/short/full/fuller/format:
+使用不同格式展示提交历史信息
+--name-only: 仅在提交信息后显示已修改的文件清单
+--name-status: 显示新增、修改、删除的文件清单
+--abbrev-commit: 仅显示SHA-1的前几个字符，而非所有的40个字符
+--relative-date:使用较短的相对时间显示
+--graph： 显示ASCII图形表示的分支合并历史
+
+12.限制log输出长度（git log [...]）
+-(n)： 仅显示最近的n条提交
+--since,--after：仅显示指定时间之后的提交
+--until,--before: 仅显示指定时间之前的提交
+--author： 仅显示指定作者相关的提交
+--committer: 仅显示指定提交者相关的提交
+--grep: 仅显示指定关键字的提交
+-S：仅显示添加或移除了某个关键字的提交
+
+13.撤销操作
+git commit --amend(覆盖前一次提交记录)
+git reset 修改暂存区域
+git checkout --[file] 撤销对文件的修改
+
+14.远程仓库的使用
+1) 查看远程仓库
+git remote [-v]查看远程仓库
+[-v]: 显示需要读写de远程仓库，使用的git保存的简写与其对应的URL
+git remote show <remote-name>: 查看远程仓库更多信息
+2) 添加远程仓库
+git remote add [shortname] <url>: 添加一个新的远程git仓库，同事指定一个你可以轻松引用的简写
+3) 从远程仓库中抓取与拉取
+git fetch [remote-name] : 访问远程仓库，从中拉去你还没有的数据，不会自动合并或修改你当前工作，必须手动合入
+git pull：使用git命令自动抓取然后合并远程分支到当前分支
+4) 推送到远程仓库
+git push [remote-name] [brahch-name]：
+5) 远程仓库的移除与重命名
+git remote rename <remote-name> <changed-name>:远程仓库重命名
+git remote rm <remote-name>: 移除远程仓库
+
+15.打标签
+1) 列出标签
+git tag [-l] ['str*']: 列出(str匹配)标签
+2) 创建标签
+   git tag -a <tag-name> -m <'tag log'>: 创建附注标签
+   git tag <tag-name>: 创建轻量标签
+   git tag -a <tag-name> hash: 为历史提交创建标签
+   git push <remote-name> <tag-name>: 共享标签
+   git push <remote-name> --tags : 上传所有标签
+3) 删除标签
+git tag -d <tag-name> :删除本地标签
+git push <remote-name> : refs/tags/<tag-name>: 更新远程仓库标签
+4) 检出标签
+git checkout <tag-name> ：检出标签
+git checkout -b <branch-name> <tag-name> : 为检出标签创建分支
+
+16.分支创建
+git branch <branch-name>
+17.分支切换
+git checkout <branch-name>
+18.新建分支
+git checkout -b <branch-name>
+19.分支合并
+git merge <branch-name>: 将此分支合并到检出分支
+20.删除分支
+git branch -d <branch-name>
+21.查看分支信息
+git branch [-v] [-merged]:查看所有分支
+[-v]:查看每一个分支最后一次提交
+[--merged]:查看哪些分支合并到当前分支
+[--no-merged]:查看所有包含未合并工作的分支
+
+22.查看远程分支
+git ls-remote [remote]:  显示地获得远程引用的完整列表
+git remote show [remote] : 获得远程分支信息
+
+23.推送到远程分支
+git push <remote> <branch>
+
+24.将远程分支合并到当前分支
+git merge <remote-name>/<branch-name>
+git checkout -b <local-branch> <remote-name>/<remote-branch> : 在本地跟踪远程分支
+
+25.跟踪分支
+git checkout --track <remote-name>/<rmeote-branch> :在本地跟踪远程分支
+
+26.显示查看远程分支信息
+-u/ --set-upstream-to
+git branch -u/--set-upstream-to <remote-name>/<remote-branch>
+
+27.删除远程分支
+git push <remote-name> --delete <remote-branch>
+
+28.查看跟踪分支
+git branch -vv
+
+29.rebase(整合分支)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

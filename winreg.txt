@@ -15,3 +15,13 @@ Functions
     winreg.LoadKey(key,sub_key,file_name)
     winreg.OpenKey(key,sub_key,reserved=0,access=KEY_READ)
     winreg.OpenKeyEx(key,sub_key,reserved=0,access=KEY_READ)
+    winreg.QueryInfoKey(key)
+    winreg.QueryValue(key,sub_key)
+    winreg.QueryValueEx(key,value_name)
+    winreg.SaveKey(key,file_name)
+    winreg.SetValue(key,sub_key,type,value)
+    winreg.SetValueEx(key,value_name,reserved,type,value)
+    winreg.DisableReflectionKey(key)
+    Winreg.EnableReflectionKey(key)
+    winreg.QueryReflectionKey(key)
+    

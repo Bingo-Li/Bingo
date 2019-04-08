@@ -24,4 +24,6 @@ Functions
     winreg.DisableReflectionKey(key)
     Winreg.EnableReflectionKey(key)
     winreg.QueryReflectionKey(key)
+
+import win32api,win32con 修改注册表
     

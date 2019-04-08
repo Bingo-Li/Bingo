@@ -39,3 +39,24 @@ shutil.copy2( src, dst)        如果两个位置的文件系统是一样的话�
 shutil.copytree( olddir, newdir, True/Flase)
 把olddir拷贝一份newdir，如果第3个参数是True，则复制目录时将保持文件夹下的符号连接，如果第3个参数是False，则将在复制的目录下生成物理副本来替代符号连接
 shutil.rmtree( src )    递归删除一个目录以及目录内的所有内容
+
+#pathlib 模块
+PurePath.parts : 访问路径组件，返回元组
+PurePath.drive : 返回驱动器盘符
+PurePath.root : 表示（本地或全局）根的字符串
+PurePath.parents ： 添加索引，返回逻辑父路径
+PurePath.parent : 返回此路径的逻辑父路径
+PurePath.name : 表示最后路径组件的字符串
+PurePath.suffix : 最后一个组件的文件扩展名
+PurePath.suffixes : 路径的文件扩展名列表
+PurePath.stem : 最后一个路径组件，除去后缀(文件名)
+PurePath.as_posix() : 返回使用正斜杠（/）的路径字符串
+PurePath.as_uri() : 将路径表示为 file URL
+PurePath.is_absolute() : 返回此路径是否为绝对路径。如果路径同时拥有驱动器符与根路径（如果风格允许）则将被认作绝对路径
+PurePath.is_reserved() : 在 PureWindowsPath，如果路径是被 Windows 保留的则返回 True，否则 False。在 PurePosixPath，总是返回 False
+PurePath.joinpath(*other) : 调用此方法等同于将每个 other 参数中的项目连接在一起
+PurePath.match(pattern) : 将此路径与提供的通配符风格的模式匹配。如果匹配成功则返回 True，否则返回 False
+如果 pattern 是相对的，则路径可以是相对路径或绝对路径，并且匹配是从右侧完成的
+PurePath.relative_to(*other) : 计算此路径相对 other 表示路径的版本
+PurePath.with_name(name) : 返回一个新的路径并修改 name。如果原本路径没有 name，ValueError 被抛出
+PurePath.with_suffix(suffix): 返回一个新的路径并修改 suffix。如果原本的路径没有后缀，新的 suffix 则被追加以代替。如果 suffix 是空字符串，则原本的后缀被移除

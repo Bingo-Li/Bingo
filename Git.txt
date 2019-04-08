@@ -134,6 +134,7 @@ git branch -vv
 
 29.rebase(整合分支)
 
+30.reset(重置Head)
 
 
 

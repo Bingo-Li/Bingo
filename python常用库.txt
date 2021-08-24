@@ -4,3 +4,4 @@ log:loguru
 windows任务管理：psutil
 数据测试：datatest
 视频录制： bandicam，cantasia，obs studio
+数据库工具：Dbeaver

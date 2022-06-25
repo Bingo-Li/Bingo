@@ -2,7 +2,9 @@
 命令行参数: fire
 log:loguru
 windows任务管理：psutil
-数据测试：datatest
+数据测试：datatest, faker
 视频录制： bandicam，cantasia，obs studio
+web开发: pywebIO
 数据库工具：Dbeaver
-windows工具：powertoys, everything, utools
+windows工具：powertoys, everything, utools, 微软电脑管家
+

@@ -7,4 +7,8 @@ windows任务管理：psutil
 web开发: pywebIO
 数据库工具：Dbeaver
 windows工具：powertoys, everything, utools, 微软电脑管家
+windows 卸载工具：Geek uninstaller, huorong uninstaller
+抓包工具：reqable
+
+
 
